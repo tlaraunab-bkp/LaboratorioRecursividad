@@ -1,0 +1,32 @@
+package recursividad_factorial;
+
+    import javax.swing.JOptionPane;
+
+public class RECURSIVIDAD_FACTORIAL {
+
+    public static void main(String[] args) {
+        
+        int numero;
+        
+        try{
+            numero = Integer.parseInt(JOptionPane.showInputDialog("Ingrese Numero"));
+            if(numero >= 0 && numero<= 2000000000){
+                JOptionPane.showMessageDialog(null, "Factorial = " +(factorial(numero)));
+            }
+            else{
+                JOptionPane.showMessageDialog(null, "Factorial = 0");
+        
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, "Factorial = 0");
+        }
+    }
+    static int factorial (int numero){
+            if (numero == 0)
+                return 1;            
+            else 
+                return numero * (factorial (numero -1));
+        }
+                
+    }

@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+	int num, prim, ult, pos;
+
+	pos = 1;
+	prim = 0;
+	ult = 0;
+	cout << "Introduzca una lista de numeros terminada en 0: ";
+	do{
+		cin >> num;
+		if((num==12)&&(prim==0)){
+			prim = pos;
+			ult = pos;
+		}else if((num==12)&&(prim!=0)){
+			ult = pos;
+		}
+		++pos;
+	}while(num!=0);
+
+	if((prim==0)&&(ult==0)){
+		cout << "Posicion 0" << endl;
+	}else{
+		cout << "Primera posicion: " << prim << endl;
+		cout << "Ultima posicion: " << ult << endl;
+	}
+	return 0;
+}

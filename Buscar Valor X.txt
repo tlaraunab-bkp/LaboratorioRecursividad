@@ -1,0 +1,14 @@
+int BuscarX(int vector[], int size) { 
+
+    if (size == 0) { 
+        return vector[0]; 
+
+    } else { 
+
+        if (vector[size] < BuscarX(vector, size - 1)) { 
+            return vector[size]; 
+        } else { 
+            return BuscarX(vector, size - 1); 
+        } 
+    } 
+} 
