@@ -1,0 +1,241 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int calcularFactorial(int num);
+int multiplicarConSuma(int a, int b);
+int sumarArreglo(int arregloA[], int a, int b, int c);
+int buscarX(int arreglo[], int tam, int s);
+int imprmirArreglo(int arreglo[], int a);
+int buscar2(int arreglo[], int a);
+
+
+
+
+int main()
+{
+//prueba de codigo de las funciones
+    int a,b,ini,res,pos,buscado;
+    int arregloA[]={8,1,1};
+    res=0;
+    ini=0;
+    a=3;
+    buscado=8;
+    printf("el factorial de %d ,es %d \n\n", a, calcularFactorial(a));
+
+    b=3;
+
+    printf("la multiplicacion de %d por %d es: %d \n\n",a,b,multiplicarConSuma(a,b));
+
+    printf("la suma del arreglo es: %d \n\n",sumarArreglo(arregloA,ini,a,res));
+
+    pos=buscarX(arregloA,3,buscado);
+    if (pos != -1){
+     printf("el %d esta en la posicion %d del arreglo\n\n",buscado, pos);
+    }else{
+     printf("el %d no exite en el arreglo\n\n",buscado);
+    }
+    imprmirArreglo(arregloA,3);
+
+    
+
+
+    return 0;
+}
+
+//1)
+int calcularFactorial(int num){
+  int b;
+  if (num==1){
+   return 1;
+  }else{
+    b=num*calcularFactorial(num-1);
+  return (b);
+  }}
+
+  //2
+int multiplicarConSuma(int a, int b){
+        if(b==0){
+          return 0;
+        }else{
+          return (a+multiplicarConSuma(a,b-1));
+    }}
+
+//3
+
+int sumarArreglo(int arregloA[], int a, int b, int c){
+if(a<b){
+sumarArreglo(arregloA, a+1, b, c+arregloA[a]);
+}else{
+return c;
+}
+
+}
+
+//4v1
+int buscarX(int arreglo[], int tam, int s){
+ int i=0, pos=-1;
+ do{
+    if(arreglo[i]==s){
+        pos=i;
+    }else{
+        i++;
+        }
+ }
+ while(i<tam && pos<0);
+ return pos;
+}
+//4v2
+
+int buscar2(int arreglo[], int a){
+int b;
+
+if(a==0){
+    return 0
+}else{
+a=buscar2(arreglo, a-1);
+if(arreglo[a]>b){
+        return arreglo[a];
+}else{
+    return buscar2(arreglo, a-1);
+    
+}
+    
+}
+}
+
+
+
+//5)
+
+
+int imprmirArreglo(int arreglo[], int a){
+    if(a<=0){
+        return 0;
+    }else{
+        imprmirArreglo(arreglo, a-1);
+        printf("%d\n\n",arreglo[a-1]);
+    }
+}
+
+
+ struct lista{
+        int numero;
+        struct lista *siguiente;
+        };
+
+ struct lista *primero, *ultimo;
+
+
+//6)
+
+int calcularOcurrencia(){
+
+}
+
+//7)
+void sumarLista(struct lista *List, int *suma){
+
+if (List != NULL){
+printf("%d, ", List->clave);
+*suma = *suma + List->clave;
+sumarLista(List->sig, suma);
+}else{
+return 0
+}
+}
+
+//8)
+void listarLista (struct lista *a){ 
+while (a->primero != NULL){ 
+printf ("%s",a->primero->elemento); 
+a->primero = a->primero->sig; 
+} 
+}
+
+//9)
+bool sonIguales(struct lista *a, struct lista *b){
+int i, c,d;
+for(i=0;i<=tamlista;i++){
+       if(a->numero==b->numero){
+       c++;
+    }else if(b->numero{
+    
+    }
+    
+    
+    if (c == d){
+    return true;
+    
+}else{
+    return false
+}
+
+}
+
+
+//10)
+void existeElemento(struct lista *L,int dato ){
+indice = L;
+if(indice && indice->dato) {
+   printf("%d\n", indice->dato);
+   indice = indice->sig;
+   
+   return dato;
+}else{
+
+   printf("no exite %d\n", indice->dato);
+}}
+
+//11)
+void eliminarX(struct lista *L,int dato ){
+indice = L;
+if(indice && indice->dato) {
+   indice = indice->sig->sig;
+   
+   return dato;
+}else{
+
+return false
+}}
+
+//14)
+void ordenarLista(Lista *l){
+
+if (esVacia(*l)) {
+
+return *l;
+
+}else{
+insertar ((*l)->elemento, (Lista *)ord(&(*l)->sig));
+return *l;
+}
+
+}
+//16)
+void invertirLista(Lista *x)
+{
+if ( x->sig==NULL )
+{
+return x;
+}
+if( x->sig!=NULL)
+{
+Lista a1;
+x=x->sig;
+a1=a1->NULL;
+}
+while(x!=NULL)
+{
+Lista *a2;
+x=x->sig;
+*a2=a2->a1;
+}
+return invertirLista(Lista x);
+}
+
+
+
+
+
+
+
